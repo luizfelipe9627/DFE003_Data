@@ -1,0 +1,21 @@
+{
+  "name": "dfe003_data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/campinho-digital/DFE003_Data.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/campinho-digital/DFE003_Data/issues"
+  },
+  "homepage": "https://github.com/campinho-digital/DFE003_Data#readme"
+}
