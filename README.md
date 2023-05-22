@@ -1,8 +1,8 @@
-# Desafio Prompt Game
+# Desafio Data
 
 ## Índice
 
-- [Desafio Prompt Game](#desafio-prompt-game)
+- [Desafio Data](#desafio-data)
   - [Índice](#índice)
   - [Resumo do projeto](#resumo-do-projeto)
   - [Objetivos de aprendizagem](#objetivos-de-aprendizagem)
