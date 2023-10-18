@@ -19,10 +19,36 @@ body {
 }
 
 /* 3. Ajustar o tamanho do card e da img (todos devem ter exatamente o mesmo tamanho). */
+.card {
+    display: flex;
+    flex-direction: column;
+}
 .image img {
-    max-width: 300px;
+    max-width: 100%;
+    min-height: 200px;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
 }
 
 /* 4. Estilizar o card. */
 
+.content {
+    background-color: #050e12;
+    height: 100%;
+    padding: 15px 17px;
+    border-radius: 0 0 8px 8px;
+}
+
 /* 5. Definir a tipografia(fonte, cor do texto, espessura, etc) do card. */
+
+.content h1 {
+    color: #b6b6b6;
+    margin-bottom: 8px;
+}
+
+.content p {
+    color: #828282;
+
+}
