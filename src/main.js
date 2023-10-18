@@ -23,8 +23,16 @@ movies.forEach((movie) => {
     img.alt = movie.Title;
 
     // 4. Colocar os elementos criados dentro dos seus devidos pais(divs).
-});      
+    section.appendChild(card);
+    card.appendChild(image);
+    card.appendChild(content);
 
+    image.appendChild(img);
+    content.appendChild(h1);
+    content.appendChild(p);
+    
+});      
+console.log(section)
 
 
 
