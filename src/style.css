@@ -1,54 +1,95 @@
-/* 1. Começar resetando o HTML. */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #000;
+  background-color: #000;
+  font-family: "Inter", sans-serif;
 }
 
-/* 2. Definir o grid e o gap do container. */
 .container {
-    max-width: 90vw;
-    margin: 50px auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+  max-width: 90vw;
+  margin: 50px auto;
 }
 
-/* 3. Ajustar o tamanho do card e da img (todos devem ter exatamente o mesmo tamanho). */
-.card {
-    display: flex;
-    flex-direction: column;
+.title {
+  color: #fff;
 }
-.image img {
-    max-width: 100%;
-    min-height: 200px;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 8px 8px 0 0;
-}
-
-/* 4. Estilizar o card. */
 
 .content {
-    background-color: #050e12;
-    height: 100%;
-    padding: 15px 17px;
-    border-radius: 0 0 8px 8px;
+  background-color: #050e12;
+  padding: 15px 17px;
+  height: 100%;
+  border-radius: 0 0 8px 8px;
 }
 
-/* 5. Definir a tipografia(fonte, cor do texto, espessura, etc) do card. */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 425px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.image img {
+  width: 100%;
+  min-height: 100%;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+}
 
 .content h1 {
-    color: #b6b6b6;
-    margin-bottom: 8px;
+  color: #b6b6b6;
+  margin-bottom: 8px;
 }
 
 .content p {
-    color: #828282;
+  color: #828282;
+}
 
+img {
+  width: 300px;
+}
+
+.image {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.image:hover .overlay {
+  opacity: 1;
 }
