@@ -93,3 +93,21 @@ img {
 .image:hover .overlay {
   opacity: 1;
 }
+
+.footer {
+  height: 90px;
+  background-color: #1a1f38;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.containerFooter { 
+  max-width: 90vw;
+}
+
+.containerFooter p {
+  color: #e2e2e2;
+  font-size: 20px;
+}
