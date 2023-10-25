@@ -38,6 +38,12 @@ body {
 }
 
 @media (max-width: 1000px) {
+  .containerHeader {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+    gap: 25px;
+  }
+
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -110,4 +116,47 @@ img {
 .containerFooter p {
   color: #e2e2e2;
   font-size: 20px;
+}
+
+header {
+  background-color: #1a1f38;
+}
+
+.containerHeader {
+  max-width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 24px 0;
+}
+
+.logo {
+  color:#fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none; 
+}
+
+.navegacao ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 20px;
+}
+
+.navegacao ul li a {
+  color: #b6b6b6;
+  text-decoration: none;
+  letter-spacing: 0.7px;
+  font-size: 18px;
+}
+
+.navegacao ul li a:hover {
+  color: #fff;
+}
+
+.navegacao ul li a.ativo {
+  color: #fff;
+  font-weight: bold;
 }
