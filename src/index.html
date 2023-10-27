@@ -5,16 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
 
-    <title>Movies - Campinho Digital</title>
+    <title>CampinhoCine</title>
 </head>
 
 <body>
-    <!-- 1. Criar um main, responsável por conter todo o conteúdo da página principal. -->
+    <header class="header">
+        <div class="containerHeader">
+            <a href="#logo" class="logo">
+                <img src="./assets/pipoca.png" alt="Pipoca em uma embalagem usando óculos 3D">
+                <h1>CampinhoCine</h1>
+            </a>
 
-    <!-- 2. Dentro do main criar uma section, responsável por indicar uma seção de conteúdo, essa section tem que ter a classe container. Essa section vai conter todos os cards. -->
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="#inicio" class="ativo">Inicio</a></li>
+                    <li><a href="#destaques">Destaques</a></li>
+                    <li><a href="#generos">Gêneros</a></li>
+                    <li><a href="#explore">Explore</a></li>
+                </ul>
+            </nav>
+
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="#lista-de-desejos">Lista de desejos</a></li>
+                    <li><a href="#minha-conta">Minha conta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h1 class="title">Em alta</h1>
+            <div class="cards alta"></div>
+        </section>
+
+        <section>
+            <h1 class="title">Últimos lançamentos</h1>
+            <div class="cards lancamentos"></div>
+        </section>
+
+        <section>
+            <h1 class="title">Assista novamente</h1>
+            <div class="cards assista"></div>
+        </section>
+
+        <section>
+            <h1 class="title">Talvez você goste</h1>
+            <div class="cards talvez-goste"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="containerFooter">
+            <p>CampinhoCine © 2023. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <script src="./main.js" type="module"></script>
 </body>
