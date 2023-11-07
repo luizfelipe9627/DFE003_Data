@@ -163,10 +163,6 @@ body {
   min-height: calc(100vh - 288px);
 }
 
-.containerPesquisa .title {
-  text-align: center;
-}
-
 .pesquisa {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -203,13 +199,24 @@ body {
 }
 
 .notFound {
-  font-size: 14px;
+  display: none;
+  font-size: 20px;
+  font-weight: bold;
   width: 100%;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.resultadoSucesso {
+  color: #00ff00;
+}
+
+.resultadoFracasso {
+  color: #ff0000;
+
 }
 
 /* Responsivo */
@@ -241,6 +248,10 @@ body {
   .formPesquisa {
     display: grid;
     grid-column: 1 / -1;
+  }
+
+  .containerPesquisa .title {
+    text-align: center;
   }
 }
 

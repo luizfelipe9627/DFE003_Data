@@ -57,13 +57,13 @@ cards.forEach(({ container, startIndex, endIndex }) => {
 // Está puxando os elementos HTML do DOM para o JavaScript.
 const inputPesquisa = document.querySelector(".formPesquisa input");
 const buttonPesquisa = document.querySelector(".formPesquisa button");
-
 const containerCardsHome = document.querySelector(".containerCards");
-
 const containerPesquisa = document.querySelector(".containerPesquisa");
+const containerPesquisaSection = document.querySelector(".containerPesquisa section");
 const containerCardsPesquisa = document.querySelector(".pesquisa");
-
 const titleResultado = document.querySelector(".containerPesquisa .title");
+const notFound = document.querySelector(".notFound");
+const notFoundText = document.querySelector(".notFound p");
 
 function handleInput(event) {
   const inputValue = inputPesquisa.value.toLowerCase(); // Criado uma constante chamada inputValue que recebe o valor do input e transforma em letras minúsculas.
@@ -95,15 +95,19 @@ function handleInput(event) {
   // Se o conteúdo do containerCardsPesquisa estiver vazio, executa o if.
   if(containerCardsPesquisa.innerHTML === "") {
     containerCardsPesquisa.style.display = "flex"; // Acessa o containerCardsPesquisa e altera o display para flex, tirando o display grid.
-    // Acessa o containerCardsPesquisa e altera o conteúdo para a estrutura HTML abaixo.
-    containerPesquisa.innerHTML = `
-      <div class="notFound">
-        <h1>Oops... Infelizmente nenhum filme com esse nome foi encontrado.</h1>
-      </div>
-    `;
+    containerPesquisaSection.style.display = "flex";
+
+    titleResultado.style.display = "none"; // Acessa o titleResultado e altera o display para none, fazendo com que ele suma da tela.
+
+    notFound.style.display = "flex"; // Acessa o notFound e altera o display para flex, fazendo com que ele apareça na tela.
+    notFoundText.innerHTML = `Oops... Infelizmente nenhum filme com o título <span class="resultadoFracasso">${inputValue}</span> foi encontrado.`; // Acessa o notFoundText e altera o conteúdo para uma string com o valor do input.
   } else {
+    notFound.style.display = "none"; // Acessa o notFound e altera o display para none, fazendo com que ele suma da tela.
+    containerPesquisaSection.style.display = "initial" // Acessa o containerPesquisaSection e altera o display para initial, dando a ele o display padrão dele
     containerCardsPesquisa.style.display = "grid"; // Acessa o containerCardsPesquisa e altera o display para grid, fazendo com que ele apareça na tela.
-    titleResultado.innerHTML = `Foi encontrado <span>${filterMovies.length} filme(s) : </span>`; // Acessa o titleResultado e altera o conteúdo para uma string com o número de filmes encontrados.
+
+    titleResultado.style.display = "initial" // Acessa o titleResultado e altera o display para initial, dando a ele o display padrão dele
+    titleResultado.innerHTML = `Foi encontrado <span class="resultadoSucesso">${filterMovies.length}</span> filme(s) : `; // Acessa o titleResultado e altera o conteúdo para uma string com o número de filmes encontrados.
   }
 }
 
