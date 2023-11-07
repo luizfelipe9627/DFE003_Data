@@ -66,7 +66,8 @@ body {
 
 /*  Main */
 
-.containerCards, .containerPesquisa {
+.containerCards,
+.containerPesquisa {
   max-width: 90vw;
   margin: 50px auto;
 }
@@ -155,37 +156,6 @@ body {
   font-size: 20px;
 }
 
-/* Responsivo */
-
-@media (max-width: 1000px) {
-  .containerHeader {
-    display: grid;
-    gap: 25px;
-    justify-content: center;
-    justify-items: center;
-  }
-
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 425px) {
-  .navegacao ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-.formPesquisa {
-  position: relative;
-}
-
 /* Pesquisa */
 
 .containerPesquisa {
@@ -230,4 +200,37 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Responsivo */
+
+@media (max-width: 1000px) {
+  .containerHeader {
+    display: grid;
+    gap: 25px;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .cards,
+  .containerPesquisa {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .formPesquisa, .formPesquisa input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .navegacao ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cards,
+  .containerPesquisa {
+    grid-template-columns: 1fr;
+  }
 }
