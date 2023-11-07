@@ -66,7 +66,7 @@ body {
 
 /*  Main */
 
-.container {
+.containerCards, .containerPesquisa {
   max-width: 90vw;
   margin: 50px auto;
 }
@@ -110,10 +110,6 @@ body {
 
 .content p {
   color: #828282;
-}
-
-img {
-  width: 300px;
 }
 
 .image {
@@ -184,4 +180,54 @@ img {
   .cards {
     grid-template-columns: 1fr;
   }
+}
+
+.formPesquisa {
+  position: relative;
+}
+
+/* Pesquisa */
+
+.containerPesquisa {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  min-height: calc(100vh - 288px);
+}
+
+.formPesquisa {
+  position: relative;
+}
+
+.formPesquisa input {
+  font-family: "Inter", sans-serif;
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  background: rgba(196, 196, 196, 0.30);
+  font-size: 14px;
+  color: #fff;
+  width: 300px;
+}
+
+.formPesquisa button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.formPesquisa button img {
+  width: 24px;
+  height: 24px;
+}
+
+.notFound {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
