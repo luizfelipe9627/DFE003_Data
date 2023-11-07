@@ -57,19 +57,25 @@ cards.forEach(({ container, startIndex, endIndex }) => {
 // Está puxando os elementos HTML do DOM para o JavaScript.
 const inputPesquisa = document.querySelector(".formPesquisa input");
 const buttonPesquisa = document.querySelector(".formPesquisa button");
+
+const containerCardsHome = document.querySelector(".containerCards");
+
 const containerPesquisa = document.querySelector(".containerPesquisa");
-const containerCards = document.querySelector(".containerCards");
+const containerCardsPesquisa = document.querySelector(".pesquisa");
+
+const titleResultado = document.querySelector(".containerPesquisa .title");
 
 function handleInput(event) {
   const inputValue = inputPesquisa.value.toLowerCase(); // Criado uma constante chamada inputValue que recebe o valor do input e transforma em letras minúsculas.
   
-  containerCards.style.display = "none"; // Acessa o containerCards e altera o display para none, fazendo com que ele suma da tela.
+  containerCardsHome.style.display = "none"; // Acessa o containerCardsHome e altera o display para none, fazendo com que ele suma da tela.
+
   containerPesquisa.style.display = "grid"; // Acessa o containerPesquisa e altera o display para grid, fazendo com que ele apareça na tela.
-  containerPesquisa.innerHTML = ""; // Acessa o containerPesquisa e altera o conteúdo para vazio.
+  containerCardsPesquisa.innerHTML = ""; // Acessa o containerCardsPesquisa e altera o conteúdo para vazio.
   
   // Se o valor digitado no input for vazio, executa o if, se não, executa o else.
   if(inputValue === "") {
-    containerCards.style.display = "grid"; // Acessa o containerCards e altera o display para grid, fazendo com que ele apareça na tela.
+    containerCardsHome.style.display = "grid"; // Acessa o containerCardsHome e altera o display para grid, fazendo com que ele apareça na tela.
     containerPesquisa.style.display = "none"; // Acessa o containerPesquisa e altera o display para none, fazendo com que ele suma da tela.
   } else {
     event.preventDefault(); // Previne o comportamento padrão do botão.
@@ -83,18 +89,21 @@ function handleInput(event) {
   
   // O forEach passa por cada filme filtrado e armazena no parâmetro movie.
   filterMovies.forEach((movie) => {
-    containerPesquisa.innerHTML += criarCard(movie); // Cria um card para cada filme passando como parâmetro o filme atual e adiciona no containerPesquisa.
+    containerCardsPesquisa.innerHTML += criarCard(movie); // Cria um card para cada filme passando como parâmetro o filme atual e adiciona no containerCardsPesquisa.
   })
 
-  // Se o conteúdo do containerPesquisa estiver vazio, executa o if.
-  if(containerPesquisa.innerHTML === "") {
-    containerPesquisa.style.display = "flex"; // Acessa o containerPesquisa e altera o display para flex, tirando o display grid.
-    // Acessa o containerPesquisa e altera o conteúdo para a estrutura HTML abaixo.
+  // Se o conteúdo do containerCardsPesquisa estiver vazio, executa o if.
+  if(containerCardsPesquisa.innerHTML === "") {
+    containerCardsPesquisa.style.display = "flex"; // Acessa o containerCardsPesquisa e altera o display para flex, tirando o display grid.
+    // Acessa o containerCardsPesquisa e altera o conteúdo para a estrutura HTML abaixo.
     containerPesquisa.innerHTML = `
       <div class="notFound">
         <h1>Oops... Infelizmente nenhum filme com esse nome foi encontrado.</h1>
       </div>
     `;
+  } else {
+    containerCardsPesquisa.style.display = "grid"; // Acessa o containerCardsPesquisa e altera o display para grid, fazendo com que ele apareça na tela.
+    titleResultado.innerHTML = `Foi encontrado <span>${filterMovies.length} filme(s) : </span>`; // Acessa o titleResultado e altera o conteúdo para uma string com o número de filmes encontrados.
   }
 }
 
